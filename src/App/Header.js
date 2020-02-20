@@ -30,23 +30,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import IntersectionVisible from 'react-intersection-visible';
 
-import User from '@model/user';
-import logo from '@root/public/images/logoIndecRight-235.png';
-import {requestSignOut} from '@actions';
-import fromState from '@selectors';
 import NavItems from './Routes/NavItems';
 
 class Header extends Component {
     static propTypes = {
-        user: PropTypes.instanceOf(User).isRequired,
         history: PropTypes.shape({
             push: PropTypes.func.isRequired
-        }),
-        assignmentType: PropTypes.arrayOf(
-            PropTypes.shape({})
-        ),
-        currentOperative: PropTypes.shape({}),
-        requestSignOut: PropTypes.func.isRequired
+        })
     };
 
     static defaultProps = {
@@ -94,7 +84,6 @@ class Header extends Component {
     }
 
     render() {
-        const {user, currentOperative, assignmentType} = this.props;
         const {isVisible} = this.state;
 
         return (
@@ -103,75 +92,13 @@ class Header extends Component {
                     onHide={e => this.onHide(e)}
                     onShow={e => this.onShow(e)}
                 >
-                    <Row>
-                        <Col sm={12}>
-                            <a onClick={() => this.redirect('/')}>
-                                <Media object src={logo}/>
-                            </a>
-                        </Col>
-                    </Row>
                     <header className="hidden-print">
                         <Navbar expand="lg" fixed={!isVisible ? 'top' : ''}>
                             <NavbarToggler onClick={() => this.toggleNavbar()}/>
                             <Collapse isOpen={this.state.isCollapse} navbar>
                                 <NavItems
                                     redirect={route => this.redirect(route)}
-                                    assignmentType={assignmentType}
-                                    operative={currentOperative}
                                 />
-                                <Nav className="ml-auto" navbar>
-                                    <NavItem>
-                                        <NavLink onClick={() => this.redirect('/misOperativos')}>
-                                            <FontAwesomeIcon icon={faTabletAlt}/>
-                                             &nbsp;MIS OPERATIVOS
-                                        </NavLink>
-                                    </NavItem>
-                                    <Dropdown
-                                        nav
-                                        inNavbar
-                                        isOpen={this.state.dropdownOpen}
-                                        onMouseOver={this.onMouseEnter}
-                                        onFocus={this.onMouseEnter}
-                                        onMouseLeave={this.onMouseLeave}
-                                        onClick={this.onMouseEnter}
-                                    >
-                                        <DropdownToggle nav caret>
-                                            <FontAwesomeIcon icon={faUserCircle}/>
-                                        </DropdownToggle>
-                                        <DropdownMenu right>
-                                            <DropdownItem>
-                                                <h6>
-                                                    <strong>
-                                                        {user && `${user.name} ${user.surname}`}
-                                                    </strong>
-                                                </h6>
-                                                <div className="p-3 bg-dark text-light">
-                                                    <small className="text-small text-white">
-                                                        Último ingreso
-                                                        &nbsp;
-                                                        <br/>
-                                                        {new Date(user.lastAccess).toLocaleString('es-AR')}
-                                                    </small>
-                                                </div>
-                                            </DropdownItem>
-                                            <DropdownItem divider/>
-                                            <DropdownItem onClick={() => this.redirect('/account')}>
-                                                <FontAwesomeIcon icon={faUser}/>
-                                                &nbsp;&nbsp; Mis Datos
-                                            </DropdownItem>
-                                            <DropdownItem divider/>
-                                            <DropdownItem onClick={() => this.redirect('/account/password')}>
-                                                <FontAwesomeIcon icon={faKey}/>
-                                                &nbsp;&nbsp; Cambio Contraseña
-                                            </DropdownItem>
-                                            <DropdownItem divider/>
-                                            <DropdownItem onClick={() => this.props.requestSignOut()}>
-                                                <FontAwesomeIcon icon={faPowerOff}/>
-                                                &nbsp;&nbsp; Cerrar sesión
-                                            </DropdownItem>
-                                        </DropdownMenu>
-                                    </Dropdown>
-                                </Nav>
                             </Collapse>
                         </Navbar>
                     </header>
@@ -181,21 +108,4 @@ class Header extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    const user = fromState.Session.getUser()(state);
-    const currentOperative = fromState.Session.getCurrentOperative()(state);
-    const assignmentType = fromState.StaticData.getAssignment()(state);
-
-    return {
-        user,
-        currentOperative,
-        assignmentType
-    };
-};
-
-export default withRouter(connect(
-    mapStateToProps,
-    dispatch => ({
-        requestSignOut: () => dispatch(requestSignOut())
-    })
-)(Header));
+export default withRouter(Header);

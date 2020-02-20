@@ -1,5 +1,10 @@
 import React from 'react';
+import {hot} from 'react-hot-loader/root';
 
 import Main from './Main';
 
-export default <Main/>;
+const App = () => (
+    <Main/>
+);
+
+export default hot(App);
