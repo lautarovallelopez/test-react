@@ -22,6 +22,12 @@ const NavItems = ({redirect}) => (
                 &nbsp;App
             </NavLink>
         </NavItem>
+        <NavItem>
+            <NavLink onClick={() => redirect('/farm')}>
+                <FontAwesomeIcon icon={faUserFriends}/>
+                &nbsp;Farm
+            </NavLink>
+        </NavItem>
     </Nav>
 );
 
