@@ -17,10 +17,10 @@ const RouterWithSession = ({
         <>
             <Header/>
             <main className="mt-20">
-                    <Switch>
-                        <Route exact path="/" component={Home}/>
-                        <Route component={Home}/>
-                    </Switch>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route component={Home}/>
+                </Switch>
             </main>
             <Footer/>
         </>

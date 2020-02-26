@@ -5,7 +5,7 @@ import {
 export default function farmData(
     state = {
         eggs: {
-           quantity: 'Algo',
+            quantity: 'Algo',
             size: 'Algo',
             colour: 'Algo',
             mapple: ''
@@ -13,7 +13,7 @@ export default function farmData(
     }, action
 ) {
     switch (action.type) {
-            case UPLOAD_HEN_INFO:
+        case UPLOAD_HEN_INFO:
             return {
                 ...state,
                 eggs: action.eggs

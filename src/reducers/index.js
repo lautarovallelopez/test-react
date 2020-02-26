@@ -1,9 +1,11 @@
-
 import {combineReducers} from 'redux';
-import staticData from './staticData';
+
+import countries from './countries';
 import farmData from './farmData';
+import staticData from './staticData';
 
 export default combineReducers({
-    staticData,
-    farmData
+    countries,
+    farmData,
+    staticData
 });

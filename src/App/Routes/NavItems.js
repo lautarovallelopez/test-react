@@ -7,7 +7,7 @@ import {
 } from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
-    faTabletAlt, faUsers, faUserFriends, faDatabase, faStickyNote
+    faTabletAlt, faUsers, faUserFriends, faDatabase, faStickyNote, faCookie
 } from '@fortawesome/free-solid-svg-icons';
 import head from 'lodash/head';
 import includes from 'lodash/includes';
@@ -28,11 +28,17 @@ const NavItems = ({redirect}) => (
                 &nbsp;Farm
             </NavLink>
         </NavItem>
+        <NavItem>
+            <NavLink onClick={() => redirect('/countries')}>
+                <FontAwesomeIcon icon={faCookie}/>
+                &nbsp;Paises
+            </NavLink>
+        </NavItem>
     </Nav>
 );
 
 NavItems.propTypes = {
-    redirect: PropTypes.func.isRequired,
+    redirect: PropTypes.func.isRequired
 };
 
 export default NavItems;
