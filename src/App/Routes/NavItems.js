@@ -34,6 +34,12 @@ const NavItems = ({redirect}) => (
                 &nbsp;Paises
             </NavLink>
         </NavItem>
+        <NavItem>
+            <NavLink onClick={() => redirect('/operativo')}>
+                <FontAwesomeIcon icon={faCookie}/>
+                &nbsp;Operativo
+            </NavLink>
+        </NavItem>
     </Nav>
 );
 

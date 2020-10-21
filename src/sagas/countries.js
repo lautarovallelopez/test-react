@@ -5,8 +5,6 @@ import {fetchCountriesSucceeded} from '@actions/countries';
 import CountriesService from '@services/countries';
 
 export function* fetch() {
-    const countries = yield call(CountriesService.fetch);
-    yield put(
-        fetchCountriesSucceeded(countries)
-    );
+    const {countries} = yield call(CountriesService.fetch);
+    yield put(fetchCountriesSucceeded(countries));
 }

@@ -14,16 +14,19 @@ const sagaMiddleware = isProduction ? saga() : saga({sagaMonitor});
 let store;
 
 export default initialState => {
+
     if (isProduction) {
         store = createStore(reducers, initialState, applyMiddleware(sagaMiddleware));
         sagaMiddleware.run(sagas);
     } else {
-        const enhancer = compose(
+        const composeEnhancer = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
+        const enhancer = composeEnhancer(
             applyMiddleware(sagaMiddleware),
             reactotronEnhancer
         );
 
         store = createStore(reducers, initialState, enhancer);
+        
         let sagaTask = sagaMiddleware.run(sagas);
 
         if (module.hot) {

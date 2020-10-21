@@ -6,7 +6,7 @@ import fromState from '@selectors';
 import Component from './Component';
 
 const mapStateToProps = state => ({
-    countries: fromState.Countries.getCountries()(state)
+    countries : state.countries.countries//countries: fromState.Countries.getCountries()(state)
 });
 
 const mapDispatchToProps = dispatch => ({

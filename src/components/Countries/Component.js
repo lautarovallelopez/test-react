@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, {PureComponent} from 'react';
-
+import map from 'lodash/map'
 
 class Countries extends PureComponent {
     componentDidMount() {
@@ -9,12 +9,16 @@ class Countries extends PureComponent {
 
     render() {
         const {countries} = this.props;
+        if(this.props.countries){
+            console.log(countries);
+        }
+        
 
         return (
             <div>
                 <h3> Países</h3>
                 <hr/>
-                {countries.map(country => (
+                {map(countries, country => (
                     <div>
                         Código: &nbsp;
                         {country.code}

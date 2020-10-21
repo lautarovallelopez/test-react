@@ -10,9 +10,10 @@ import RouterWithSession from './Routes/WithSession';
 import RouterOffline from './Routes/Offline';
 import Loading from './Routes/Loading';
 
-const App = ({
-}) => {
-    return (<RouterOffline/>);
-};
+const App = () => (
+    <>
+        <RouterOffline/>
+    </>
+)
 
 export default connect()(App);

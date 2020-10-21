@@ -2,7 +2,7 @@ import Http from './http';
 
 class Countries {
     static fetch() {
-        return Http.get('');
+        return Http.get('api/countries');
     }
 }
 
