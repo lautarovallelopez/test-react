@@ -20,7 +20,7 @@ export default () => (
                     <Route exact path="/app" component={Form}/>
                     <Route exact path="/farm" component={Farm}/>
                     <Route exact path="/countries" component={Countries}/>
-                    <Route exact path="/operativo" component={Operativo}/>
+                    <Route path="/operativo" component={Operativo}/>
                     <Route component={Error}/>
                 </Switch>
             </main>
