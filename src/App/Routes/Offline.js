@@ -9,10 +9,10 @@ import Error from '@components/Error';
 import Operativo from '@components/Operativo';
 import Footer from '../Footer';
 import Header from '../Header';
-
 export default () => (
     <HashRouter>
         <>
+
             <Header/>
             <main className="mt-20">
                 <Switch>
@@ -25,6 +25,7 @@ export default () => (
                 </Switch>
             </main>
             <Footer/>
+
         </>
     </HashRouter>
 );

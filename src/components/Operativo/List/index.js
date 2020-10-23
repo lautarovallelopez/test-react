@@ -7,7 +7,9 @@ import Component from './Component';
 
 // Store Redux - StaticData
 const mapStateToProps = state => ({
-    operativos: get(state, 'operativo.operativos', 'No hay operativos')
+    operativos: get(state, 'operativo.operativos', 'No hay operativos'),
+    tableHeaders: get(state, 'operativo.tableHeaders', 'No hay operativos'),
+    formHeaders: get(state, 'operativo.formHeaders')
 });
 
 const mapDispatchToProps = dispatch => ({

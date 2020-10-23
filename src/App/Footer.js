@@ -4,7 +4,7 @@ import {Row, Col} from 'reactstrap';
 
 const Footer = () => (
     <footer
-        className="hidden-print"
+        style={{marginTop : '10px'}}
     >
         <Row>
             <Col sm={4} md={4} className={`m-0 p-0 mt-2 ml-1 pl-1`}>
