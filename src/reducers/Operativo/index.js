@@ -1,7 +1,9 @@
 import {
     FETCH_OPERATIVOS_REQUESTED,
     FETCH_OPERATIVOS_SUCCEEDED,
-    UPDATE_OPERATIVO
+    UPDATE_OPERATIVO,
+    FETCH_ONE_OPERATIVO_REQUESTED,
+    FETCH_ONE_OPERATIVO_SUCCEEDED
 } from '@actions/operativo';
 import initialState from './initialState';
 export default function farmData(
@@ -20,12 +22,22 @@ export default function farmData(
                 ...state,
                 operativos : action.result.operativos,
                 estados : action.result.estadosOperativos
-            }
+            };
         case UPDATE_OPERATIVO:
             return {
                 ...state,
                 operativoActual : action.change
-            }
+            };
+        case FETCH_ONE_OPERATIVO_REQUESTED:
+            return {
+                ...state,
+                operativoActual : initialState.operativoActual
+            };
+        case FETCH_ONE_OPERATIVO_SUCCEEDED:
+            return {
+                ...state,
+                operativoActual : action.operativo
+            };
         default:
             return state;
     }

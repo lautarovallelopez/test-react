@@ -1,8 +1,9 @@
 import {connect} from 'react-redux';
 import get from 'lodash/get';
-
 import {
-    updateOperativo
+    updateOperativo,
+    submitOperativoRequested,
+    fetchOneOperativoRequested
 } from '@actions/operativo';
 
 import Component from './Component';
@@ -15,7 +16,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    update: change => dispatch(updateOperativo(change))
+    update: change => dispatch(updateOperativo(change)),
+    submit: () => dispatch(submitOperativoRequested()),
+    fetchOne: id => dispatch(fetchOneOperativoRequested(id))
 });
 
 export default connect(

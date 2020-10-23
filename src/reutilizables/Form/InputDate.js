@@ -1,4 +1,5 @@
 import React from 'react';
+import { split } from 'lodash';
 import { FormGroup, Label, Input, Col } from 'reactstrap';
 const InputDate = ({label, value, onChange}) => (
     <FormGroup row>
@@ -9,7 +10,7 @@ const InputDate = ({label, value, onChange}) => (
             name={label}
             id={label}
             placeholder={`Ingrese ${label}`}
-            value = {value}
+            value = {split(value, 'T')[0]}
             onChange={onChange}
           />
         </Col>

@@ -1,17 +1,15 @@
-import {
-    all,
-    takeEvery
-} from 'redux-saga/effects';
+import {all} from 'redux-saga/effects';
+import {concat} from 'lodash';
 
-import {FETCH_COUNTRIES_REQUESTED} from '@actions/countries';
-import {FETCH_OPERATIVOS_REQUESTED} from '@actions/operativo';
+import country from './Country';
+import operativo from './Operativo';
 
-import {fetch} from './countries';
-import {fetchOperativo} from './operativo';
 
 export default function* root() {
-    yield all([
-        takeEvery(FETCH_COUNTRIES_REQUESTED, fetch),
-        takeEvery(FETCH_OPERATIVOS_REQUESTED, fetchOperativo)
-    ]);
+    yield all(
+        concat(
+            country,
+            operativo
+        )
+    );
 }

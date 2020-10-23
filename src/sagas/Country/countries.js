@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import {call, put} from 'redux-saga/effects';
 
 import {fetchCountriesSucceeded} from '@actions/countries';

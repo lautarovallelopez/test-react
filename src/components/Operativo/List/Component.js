@@ -21,6 +21,7 @@ class List extends Component{
                             rows = {operativos}
                             headers = {tableHeaders}
                             information = {formHeaders}
+                            linkTo='/operativo'
                         />
                     </Col>
                 </Row>
