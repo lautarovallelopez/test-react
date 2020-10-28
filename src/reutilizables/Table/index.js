@@ -1,9 +1,9 @@
 import React from 'react';
 import map from 'lodash/map'
-import { Button, Table } from 'reactstrap';
+import { Button, Table, ButtonGroup } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import Modal from './Modal';
-const Index = ({headers, rows, information, linkTo}) => (
+const Index = ({headers, rows, information, links}) => (
     <Table > 
       <thead>
         <tr>
@@ -11,7 +11,7 @@ const Index = ({headers, rows, information, linkTo}) => (
             <th>{header}</th>
           ))}
           {information && <th>Información</th>}
-          <th>Acciones</th>
+          {links && <th>Acciones</th>}
         </tr>
       </thead>
       <tbody>
@@ -30,7 +30,18 @@ const Index = ({headers, rows, information, linkTo}) => (
                 />
               </td>
             )}
-            <td> <Button tag={Link} to={`${linkTo}/${row.id_operativo}`} >Editar</Button> </td>
+            {links &&
+              <td>
+                <ButtonGroup>
+                  {map(links, link=>(
+                    <Button tag={Link} to={`${link.url}/${row[link.id]}`} >
+                      {link.label}
+                    </Button>
+                  ))}
+                </ButtonGroup>
+                
+                
+              </td>}
           </tr>
         ))}
         

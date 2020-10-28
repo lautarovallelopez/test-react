@@ -5,7 +5,7 @@ import InputNumber from './Form/InputNumber';
 import InputSelect from './Form/InputSelect';
 import InputText from './Form/InputText';
 import RegularInput from './Form/RegularInput';
-
+import InputRadio from './Form/InputRadio';
 
 export {Table};
 export {InputEmail};
@@ -14,3 +14,4 @@ export {InputNumber};
 export {InputSelect};
 export {InputText};
 export {RegularInput};
+export {InputRadio};

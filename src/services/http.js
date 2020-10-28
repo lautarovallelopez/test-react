@@ -53,6 +53,7 @@ export default class Http {
     static async postFile(url, file) {
         const data = new FormData();
         data.append('file', file);
+        data.append('nombre', 'lautaro');
 
         const response = await fetch(`${ENDPOINT}${url}`, {
             method: 'POST',

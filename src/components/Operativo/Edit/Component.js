@@ -5,9 +5,11 @@ import { InputEmail, InputDate, InputNumber, InputSelect, RegularInput} from '..
 class Edit extends Component{
     componentDidMount(){
         const {id} = this.props.match.params;
+        this.props.fetchOptions();
         if(id){
             this.props.fetchOne(id);
         }
+        
     }
     handleChange(change){
         const {operativoActual} = this.props;
@@ -33,11 +35,10 @@ class Edit extends Component{
             fecha_entrega_operativo,
             id_estado_operativo,
             calidad_operativo,
-            nivel_error_operativo,
-            fecha_alta
+            nivel_error_operativo
         } = this.props.operativoActual;
         const {estados, formatos} = this.props;
-
+        console.log(estados);
         return (
             <Container>
                 <Row>

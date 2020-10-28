@@ -38,20 +38,5 @@ export default {
         id_estado_operativo : null,
         calidad_operativo : null,
         nivel_error_operativo : null
-    },
-    estados : [],
-    formatos : [
-        {
-            id : 'dbf',
-            descripcion : 'dbf'
-        },
-        {
-            id : 'csv',
-            descripcion: 'csv'
-        },
-        {
-            id : 'txt',
-            descripcion : 'txt'
-        }
-    ]
+    }
 }

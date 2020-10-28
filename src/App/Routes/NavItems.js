@@ -40,6 +40,12 @@ const NavItems = ({redirect}) => (
                 &nbsp;Operativo
             </NavLink>
         </NavItem>
+        <NavItem>
+            <NavLink onClick={() => redirect('/file')}>
+                <FontAwesomeIcon icon={faCookie}/>
+                &nbsp;SubirArchivo
+            </NavLink>
+        </NavItem>
     </Nav>
 );
 

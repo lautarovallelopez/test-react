@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 
 import {fetchCountriesRequested} from '@actions/countries';
 
-import fromState from '@selectors';
+//import fromState from '@selectors';
 import Component from './Component';
 
 const mapStateToProps = state => ({

@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import get from 'lodash/get';
 
 import {fetchOperativosRequested} from '@actions/operativo';
+import {fetchOptionsRequested} from '@actions/options';
 
 import Component from './Component';
 
@@ -13,7 +14,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchOperativos: () => dispatch(fetchOperativosRequested())
+    fetchOperativos: () => dispatch(fetchOperativosRequested()),
+    fetchOptions: () => dispatch(fetchOptionsRequested())
 });
 
 export default connect(

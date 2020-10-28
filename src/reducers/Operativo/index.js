@@ -5,7 +5,10 @@ import {
     FETCH_ONE_OPERATIVO_REQUESTED,
     FETCH_ONE_OPERATIVO_SUCCEEDED
 } from '@actions/operativo';
+
 import initialState from './initialState';
+
+
 export default function farmData(
     state = initialState,
     action
@@ -20,8 +23,7 @@ export default function farmData(
         case FETCH_OPERATIVOS_SUCCEEDED:
             return {
                 ...state,
-                operativos : action.result.operativos,
-                estados : action.result.estadosOperativos
+                operativos : action.result.operativos
             };
         case UPDATE_OPERATIVO:
             return {

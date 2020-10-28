@@ -34,6 +34,7 @@ module.exports = {
             '@actions': path.resolve(__dirname, './src/actions'),
             '@model': path.resolve(__dirname, './src/model'),
             '@util': path.resolve(__dirname, './src/util'),
+            '@reutilizables': path.resolve(__dirname, './src/reutilizables'),
             '@root': __dirname
         }
     },

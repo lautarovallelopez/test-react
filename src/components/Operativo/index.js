@@ -5,7 +5,6 @@ import {
 } from 'react-router-dom';
 import List from './List';
 import Edit from './Edit';
-
 const Operativo = ({match : {path}})=>(
     <Switch>
         <Route path={`${path}/new`} exact component={Edit} />
