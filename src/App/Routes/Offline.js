@@ -8,7 +8,8 @@ import {
     Countries,
     Error,
     Operativo,
-    EstructuraOperativo
+    EstructuraOperativo,
+    Lote
 } from '@components';
 import InputFile from './InputFile';
 import Footer from '../Footer';
@@ -26,6 +27,7 @@ export default () => (
                     <Route exact path="/farm" component={FarmForm}/>
                     <Route exact path="/countries" component={Countries}/>
                     <Route path="/estructuraOperativo" component={EstructuraOperativo} />
+                    <Route path="/lotes" component={Lote} />
                     <Route path="/operativo" component={Operativo}/>
                     <Route component={Error}/>
                 </Switch>

@@ -32,6 +32,11 @@ class List extends Component{
                                     url:'estructuraOperativo',
                                     id : 'id_operativo',
                                     label : 'Estructura'
+                                },
+                                {
+                                    url:'lotes',
+                                    id : 'id_operativo',
+                                    label : 'Lotes'
                                 }
                             ]}
                         />

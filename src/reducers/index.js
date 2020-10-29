@@ -6,7 +6,7 @@ import operativo from './Operativo';
 import options from './Options';
 import estructuraOperativo from './EstructuraOperativo';
 import file from './File';
-
+import lote from './Lote';
 export default combineReducers({
     countries,
     farmData,
@@ -14,5 +14,6 @@ export default combineReducers({
     operativo,
     options,
     file,
-    estructuraOperativo
+    estructuraOperativo,
+    lote
 });

@@ -6,7 +6,9 @@ import InputSelect from './Form/InputSelect';
 import InputText from './Form/InputText';
 import RegularInput from './Form/RegularInput';
 import InputRadio from './Form/InputRadio';
+import InputFile from './Form/InputFile';
 
+export {InputFile};
 export {Table};
 export {InputEmail};
 export {InputDate};

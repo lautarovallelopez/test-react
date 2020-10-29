@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Table} from '../../../reutilizables';
 import {Container, Row, Col, Button} from 'reactstrap';
 import {Link} from 'react-router-dom';
-import { get } from 'lodash';
 class List extends Component{
     componentDidMount(){
         const {id_operativo} = this.props.match.params;
