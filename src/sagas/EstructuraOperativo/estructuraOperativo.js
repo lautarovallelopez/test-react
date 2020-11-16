@@ -7,8 +7,8 @@ import {
 import EstructuraService from '@services/estructuraOperativo';
 
 export function* fetchEstructura({id_operativo}){
-    const estructura = yield call(EstructuraService.fetch, id_operativo);
-    yield put(fetchEstructuraOperativoSucceeded(estructura));
+    const response = yield call(EstructuraService.fetch, id_operativo);
+    yield put(fetchEstructuraOperativoSucceeded(response));
 }
 export function* submitCampo(){
     const {campo} = yield select(state => state.estructuraOperativo)

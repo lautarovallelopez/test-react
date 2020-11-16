@@ -2,7 +2,7 @@ import Http from './http';
 
 class EstructuraOperativo{
     static fetch(id_operativo){
-        return Http.get(`api/estructuraOperativo/${id_operativo}`)
+        return Http.get(`api/estructuraOperativo?id_operativo=${id_operativo}`)
     }
     static save(campo){
         return Http.post('api/estructuraOperativo', campo)

@@ -2,7 +2,7 @@ export const FETCH_ESTRUCTURA_OPERATIVO_REQUESTED = 'FETCH_ESTRUCTURA_OPERATIVO_
 export const fetchEstructuraOperativoRequested = id_operativo => ({type:FETCH_ESTRUCTURA_OPERATIVO_REQUESTED, id_operativo});
 
 export const FETCH_ESTRUCTURA_OPERATIVO_SUCCEEDED = 'FETCH_ESTRUCTURA_OPERATIVO_SUCCEEDED';
-export const fetchEstructuraOperativoSucceeded = estructura => ({type:FETCH_ESTRUCTURA_OPERATIVO_SUCCEEDED, estructura});
+export const fetchEstructuraOperativoSucceeded = response => ({type:FETCH_ESTRUCTURA_OPERATIVO_SUCCEEDED, response});
 
 export const UPDATE_CAMPO = 'UPDATE_CAMPO';
 export const updateCampo = updates => ({type:UPDATE_CAMPO, updates});

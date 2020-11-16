@@ -24,7 +24,7 @@ class Edit extends Component{
     render(){
         const {
             nombre_original,
-            id_campo,
+            id_nombre_campo_entrada,
             dominio,
             es_parte_del_id,
             tipo_de_dato,
@@ -50,11 +50,10 @@ class Edit extends Component{
                                         onChange={({target:{value}}) => this.handleChange({nombre_original:value})}
                                     />
                                     <InputSelect
-                                        label = 'id_campo'
+                                        label = 'id_nombre_campo_entrada'
                                         values = {entradasCampos}
-                                        selectedOne = {id_campo}
-                                        selectedOne={id_campo}
-                                        onChange={({target:{value}}) => this.handleChange({id_campo:value})}
+                                        selectedOne = {id_nombre_campo_entrada}
+                                        onChange={({target:{value}}) => this.handleChange({id_nombre_campo_entrada:value})}
                                     />
                                     <RegularInput
                                         label = 'dominio'

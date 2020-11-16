@@ -18,7 +18,7 @@ export default (state=initialState, action) => {
         case FETCH_ESTRUCTURA_OPERATIVO_SUCCEEDED:
             return {
                 ...state,
-                estructura : action.estructura
+                estructura : action.response.estructuras
             }
         case UPDATE_CAMPO:
             return {

@@ -17,7 +17,7 @@ const InputSelect = ({label, values, onChange, selectedOne}) => (
                   selected={selectedOne===value[0]}
                   value={value[0]}
                 >
-                  {value[1]}
+                  {value[1] || value[0]}
                 </option>
               )
             })}
