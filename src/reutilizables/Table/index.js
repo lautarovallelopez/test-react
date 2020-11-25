@@ -4,8 +4,8 @@ import { Button, Table, ButtonGroup } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import Modal from './Modal';
 const Index = ({headers, rows, information, links}) => (
-    <Table > 
-      <thead>
+    <Table >
+      <thead className='head-table'>
         <tr>
           {headers && map(headers, header => (
             <th>{header}</th>

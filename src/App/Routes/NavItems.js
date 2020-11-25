@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
     Nav,
     NavItem,
-    NavLink
+    NavLink as NavL
 } from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
@@ -17,34 +17,34 @@ import map from 'lodash/map';
 const NavItems = ({redirect}) => (
     <Nav className="mr-auto" navbar>
         <NavItem>
-            <NavLink onClick={() => redirect('/app')}>
+            <NavL onClick={() => redirect('/app')}>
                 <FontAwesomeIcon icon={faTabletAlt}/>
                 &nbsp;App
-            </NavLink>
+            </NavL>
         </NavItem>
         <NavItem>
-            <NavLink onClick={() => redirect('/farm')}>
+            <NavL onClick={() => redirect('/farm')}>
                 <FontAwesomeIcon icon={faUserFriends}/>
                 &nbsp;Farm
-            </NavLink>
+            </NavL>
         </NavItem>
         <NavItem>
-            <NavLink onClick={() => redirect('/countries')}>
+            <NavL onClick={() => redirect('/countries')}>
                 <FontAwesomeIcon icon={faCookie}/>
                 &nbsp;Paises
-            </NavLink>
+            </NavL>
         </NavItem>
         <NavItem>
-            <NavLink onClick={() => redirect('/operativo')}>
+            <NavL onClick={() => redirect('/operativo')}>
                 <FontAwesomeIcon icon={faCookie}/>
                 &nbsp;Operativo
-            </NavLink>
+            </NavL>
         </NavItem>
         <NavItem>
-            <NavLink onClick={() => redirect('/file')}>
+            <NavL onClick={() => redirect('/tabs')}>
                 <FontAwesomeIcon icon={faCookie}/>
-                &nbsp;SubirArchivo
-            </NavLink>
+                &nbsp;Tabs
+            </NavL>
         </NavItem>
     </Nav>
 );

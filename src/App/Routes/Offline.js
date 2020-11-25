@@ -11,7 +11,7 @@ import {
     EstructuraOperativo,
     Lote
 } from '@components';
-import InputFile from './InputFile';
+import tabs from './tabs';
 import Footer from '../Footer';
 import Header from '../Header';
 export default () => (
@@ -22,7 +22,7 @@ export default () => (
             <main className="mt-20">
                 <Switch>
                     <Route exact path="/" component={Home}/>
-                    <Route exact path="/file" component={InputFile} />
+                    <Route exact path="/tabs" component={tabs} />
                     <Route exact path="/app" component={Form}/>
                     <Route exact path="/farm" component={FarmForm}/>
                     <Route exact path="/countries" component={Countries}/>
