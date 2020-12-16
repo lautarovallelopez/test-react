@@ -2,9 +2,10 @@ import React from 'react';
 import { FormGroup, Label, Input, Col } from 'reactstrap';
 const InputEmail = ({label, value, onChange}) => (
     <FormGroup row>
-        <Label for={label} sm={1.5}>{label}</Label>
-        <Col>
+        <Label for={label}>{label}:</Label>
           <Input
+            placeholder="sm"
+            bsSize="sm"
             type="email"
             name={label}
             id={label}
@@ -12,7 +13,6 @@ const InputEmail = ({label, value, onChange}) => (
             value={value}
             onChange={onChange}
           />
-        </Col>
     </FormGroup>
 );
 

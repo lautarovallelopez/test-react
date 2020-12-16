@@ -5,6 +5,10 @@ import {
     Navbar,
     NavbarToggler,
     Collapse,
+    NavbarText,
+    Container,
+    Row,
+    Col
 } from 'reactstrap';
 import {
     faPowerOff,
@@ -14,7 +18,7 @@ import {
     faKey
 } from '@fortawesome/free-solid-svg-icons';
 import IntersectionVisible from 'react-intersection-visible';
-
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import NavItems from './Routes/NavItems';
 
 class Header extends Component {
@@ -78,14 +82,23 @@ class Header extends Component {
                     onShow={e => this.onShow(e)}
                 >
                     <header className="hidden-print">
-                        <Navbar expand="lg" fixed={!isVisible ? 'top' : ''}>
+                        <Navbar expand="lg" fixed={!isVisible ? 'top' : ''} >
                             <NavbarToggler onClick={() => this.toggleNavbar()}/>
-                            <Collapse isOpen={this.state.isCollapse} navbar>
+                            <Collapse isOpen={this.state.isCollapse} navbar style={{display:'inline'}}>
                                 <NavItems
                                     redirect={route => this.redirect(route)}
                                 />
                             </Collapse>
+
+                            <h1 style={{color: 'white'}} style={{color:'white', fontSize:'17px'}}>Sistema de Codificación Informatizada</h1>
+
+                            <ul className="navbar-nav nav-flex-icons">
+                                <li className="nav-item">
+                                    <FontAwesomeIcon icon={faPowerOff}/>
+                                </li>
+                            </ul>
                         </Navbar>
+                        
                     </header>
                 </IntersectionVisible>
             </div>

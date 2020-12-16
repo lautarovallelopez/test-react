@@ -35,6 +35,7 @@ module.exports = {
             '@model': path.resolve(__dirname, './src/model'),
             '@util': path.resolve(__dirname, './src/util'),
             '@reutilizables': path.resolve(__dirname, './src/reutilizables'),
+            '@public': path.resolve(__dirname, './public'),
             '@root': __dirname
         }
     },

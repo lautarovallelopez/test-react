@@ -1,10 +1,17 @@
 import React from 'react';
-import {Col, Container, Row} from 'reactstrap';
+import {
+    Col,
+    Container,
+    Row,
+    Nav,
+    NavItem,
+    NavLink
+} from 'reactstrap';
 import PackageJson from '@root/package.json';
 
 const Home = () => (
     <Container>
-        <Row>
+       <Row>
             <Col sm={12} className="text-center">
                 <h1 className="oswald title-home">
                     &nbsp;Bienvenido al Sistema&nbsp;

@@ -3,15 +3,15 @@ import {FormGroup, Label, Col, Input} from 'reactstrap';
 
 const InputFile = ({name, onChange})=>(
     <FormGroup row>
-        <Label for="exampleFile" sm={2}>File</Label>
-        <Col sm={10}>
-          <Input
-            type="file"
-            name={name}
-            id="exampleFile"
-            onChange = {onChange}
-        />
-        </Col>
+    <Label for="exampleFile">File</Label>
+        <Input
+        placeholder="sm"
+        bsSize="sm"
+        type="file"
+        name={name}
+        id="exampleFile"
+        onChange = {onChange}
+    />
     </FormGroup>
 )
 

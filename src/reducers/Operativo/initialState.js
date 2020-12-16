@@ -20,8 +20,14 @@ export default {
         'fecha_alta'
     ],
     tableHeaders : [
-        'id_operativo',
-        'descripcion'
+        'descripcion',
+        'fecha_llegada_operativo',
+        'total_registros_operativo',
+        'fecha_inicio_codificacion',
+        'fecha_fin_codificacion',
+        'id_estado_operativo',
+        'calidad_total_operativo',
+        'nivel_error_operativo'
     ],
     operativoActual : {
         descripcion : null,

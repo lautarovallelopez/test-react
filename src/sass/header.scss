@@ -1,9 +1,8 @@
 .navbar {
   width: auto;
   padding: 1px;
-  margin-top: 1.5px;
   background-color: $light-blue-color;
-
+  
   .navbar-nav .nav-link {
     padding: 5px 10px 6px;
     margin-top: 5px;
@@ -16,7 +15,7 @@
       color: #000;
     }
   }
-
+  
   .dropdown-menu {
     color: $primary-color;
     background-color: $primary-color-light;

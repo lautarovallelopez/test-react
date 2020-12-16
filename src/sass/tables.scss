@@ -2,11 +2,6 @@
   vertical-align: middle !important;
 }
 
-.data-Container-header { // sass-lint:disable-line class-name-format
-  color: $primary-color-dark;
-  background-color: $primary-color-light;
-}
-
 .divider {
   border-right: solid thin #000;
 }
@@ -65,9 +60,6 @@ table {
     text-align: center;
     vertical-align: middle;
     background-color: $header-color-table;
-  }
-  input {
-    padding: 5px 0;
   }
 }
 
@@ -188,6 +180,7 @@ table {
 }
 
 .table{
+  font-size: 0.9em;
   td, th {
     text-align: center;
   }
@@ -195,5 +188,10 @@ table {
   td {
     padding: 2px 0;
   }
+  margin: 0;
+  padding: 0;
+}
+.col{
+  padding: 0;
 }
 

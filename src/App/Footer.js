@@ -1,24 +1,35 @@
 /* global VERSION */
 import React from 'react';
-import {Row, Col} from 'reactstrap';
-
+import {Row, Col, Media} from 'reactstrap';
+import footerLogo from '@public/images/logo.svg';
 const Footer = () => (
     <footer
         style={{marginTop : '10px'}}
     >
         <Row>
-            <Col sm={4} md={4} className={`m-0 p-0 mt-2 ml-1 pl-1`}>
+            <Col sm={3} md={3} className={`m-0 p-0 mt-2`}>
                 <div className={`version small`}>
                     Version&nbsp;
                     {VERSION}
                     <br/>
+                    SICI
                 </div>
             </Col>
-            <Col>
+            <Col sm={3} md={3} className={`m-0 p-0 mt-2`}>
                 <quote className={`small`}>
-                    <a href="https://www.indec.gob.ar/" target="_blank" rel="noopener noreferrer">@TEST</a>
+                    Usuario
                     &nbsp;- 2020
                 </quote>
+            </Col>
+            <Col sm={3} md={3} className={`m-0 p-0 mt-2`}>
+                <div className={`version small`}>
+                    Mesa de Servicios
+                    <br/>
+                    De Lunes a Viernes Hábiles (011) 5031 4630
+                </div>
+            </Col>
+            <Col sm={3} md={3} className={`m-0 p-0 mt-2`}>
+                <img src={footerLogo}/>
             </Col>
         </Row>
     </footer>

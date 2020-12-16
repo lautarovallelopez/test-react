@@ -11,13 +11,17 @@ class List extends Component{
         const {operativos, tableHeaders, formHeaders} = this.props;
         return(
             <Container>
+                
                 <Row>
+                    <Col >
+                        <h1>Operativos</h1>
+                    </Col>
                     <Col>
-                        <Button color="primary" tag={Link} to='/operativo/new'>Nuevo Operativo</Button>
+                        <Button className='float-right' color="primary" tag={Link} to='/operativo/new'>Nuevo Operativo</Button>
                     </Col>
                 </Row>
                 <Row>
-                    <Col className="table-responsive">
+                    <Col>
                         <Table
                             rows = {operativos}
                             headers = {tableHeaders}

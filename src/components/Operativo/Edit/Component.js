@@ -1,6 +1,7 @@
+import { reduce } from 'lodash';
 import React, {Component} from 'react';
 import { Form, Row, Col, Button, Container} from 'reactstrap';
-import { InputEmail, InputDate, InputNumber, InputSelect, RegularInput} from '../../../reutilizables';
+import { InputEmail, InputDate, InputNumber, InputSelect, RegularInput, InputText} from '../../../reutilizables';
 
 class Edit extends Component{
     componentDidMount(){
@@ -9,7 +10,6 @@ class Edit extends Component{
         if(id){
             this.props.fetchOne(id);
         }
-        
     }
     handleChange(change){
         const {operativoActual} = this.props;
@@ -41,93 +41,134 @@ class Edit extends Component{
         console.log(estados);
         return (
             <Container>
-                <Row>
-                    <Col sm={{offset:3, size:6}} >
-                        <Form>
-                            <Row>
-                                <Col sm={{offset:0.5, size:11}}>
-                                    <RegularInput 
-                                        label='descripcion'
-                                        value={descripcion}
-                                        onChange={({target:{value}}) => this.handleChange({descripcion:value})}
-                                    />
-                                    <RegularInput
-                                        label='observacion'
-                                        value={observacion}
-                                        onChange={({target:{value}}) => this.handleChange({observacion:value})}
-                                    />
-                                    <RegularInput
-                                        label='dominio'
-                                        value={dominio}
-                                        onChange={({target:{value}}) => this.handleChange({dominio:value})}
-                                    />
-                                    <InputDate
-                                        label='fecha_llegada_paquete'
-                                        value={fecha_llegada_paquete}
-                                        onChange={({target:{value}}) => this.handleChange({fecha_llegada_paquete:value})}
-                                    />
-                                    <InputSelect
-                                        label='formato_del_archivo'
-                                        values={formatos}
-                                        selectedOne={formato_del_archivo}
-                                        onChange={({target:{value}}) => this.handleChange({formato_del_archivo:value})}
-                                    />
-                                    <InputNumber
-                                        label='total_registros'
-                                        value={total_registros}
-                                        onChange={({target:{value}}) => this.handleChange({total_registros:value})}
-                                    />
-                                    <RegularInput
-                                        label='contacto_operativo'
-                                        value={contacto_operativo}
-                                        onChange={({target:{value}}) => this.handleChange({contacto_operativo:value})}
-                                    />
-                                    <InputEmail
-                                        label='mail_contacto'
-                                        value={mail_contacto}
-                                        onChange={({target:{value}}) => this.handleChange({mail_contacto:value})}
-                                    />
-                                    <InputDate
-                                        label='fecha_inicio_codificacion'
-                                        value={fecha_inicio_codificacion}
-                                        onChange={({target:{value}}) => this.handleChange({fecha_inicio_codificacion:value})}
-                                    />
-                                    <InputDate
-                                        label='fecha_fin_codificacion'
-                                        value={fecha_fin_codificacion}
-                                        onChange={({target:{value}}) => this.handleChange({fecha_fin_codificacion:value})}
-                                    />
-                                    <InputDate
-                                        label='fecha_entrega_operativo'
-                                        value={fecha_entrega_operativo}
-                                        onChange={({target:{value}}) => this.handleChange({fecha_entrega_operativo:value})}
-                                    />
-                                    <InputSelect
-                                        label='id_estado_operativo'
-                                        values={estados}
-                                        selectedOne={id_estado_operativo}
-                                        onChange={({target:{value}}) => this.handleChange({id_estado_operativo:value})}
-                                    />
-                                    <InputNumber
-                                        label='calidad_operativo'
-                                        value={calidad_operativo}
-                                        onChange={({target:{value}}) => this.handleChange({calidad_operativo:value})}
-                                    />
-                                    <InputNumber
-                                        label='nivel_error_operativo'
-                                        value={nivel_error_operativo}
-                                        onChange={({target:{value}}) => this.handleChange({nivel_error_operativo:value})}
-                                    />
-                                    <Button
-                                        onClick={()=>this.handleClick()}
-                                    >
-                                        Enviar
-                                    </Button>
-                                </Col>
-                            </Row>
-                        </Form>
-                    </Col>
-                </Row>
+                <h1>Edición Operativo</h1>
+                <Form>
+                    <Row form>
+                        <Col md='4'>
+                            <RegularInput 
+                                label='descripcion'
+                                value={descripcion}
+                                onChange={({target:{value}}) => this.handleChange({descripcion:value})}
+                            />
+                        </Col>
+                        <Col md='4'>
+                            <RegularInput
+                                label='observacion'
+                                value={observacion}
+                                onChange={({target:{value}}) => this.handleChange({observacion:value})}
+                            />
+                        </Col>
+                        <Col ms='4'>
+                            <RegularInput
+                                label='dominio'
+                                value={dominio}
+                                onChange={({target:{value}}) => this.handleChange({dominio:value})}
+                            />
+                        </Col>
+                    </Row>
+                    <Row form >
+                        <Col>
+                            <InputDate
+                                label='fecha_llegada_paquete'
+                                value={fecha_llegada_paquete}
+                                onChange={({target:{value}}) => this.handleChange({fecha_llegada_paquete:value})}
+                            />
+                        </Col>
+                        <Col>
+                            <InputSelect
+                                label='formato_del_archivo'
+                                values={formatos}
+                                selectedOne={formato_del_archivo}
+                                onChange={({target:{value}}) => this.handleChange({formato_del_archivo:value})}
+                            />
+                        </Col>
+                        <Col>
+                            <InputNumber
+                                label='total_registros'
+                                value={total_registros}
+                                onChange={({target:{value}}) => this.handleChange({total_registros:value})}
+                            />
+                        </Col>
+                    </Row>
+                    <Row form>
+                        <Col>
+                            <RegularInput
+                                label='contacto_operativo'
+                                value={contacto_operativo}
+                                onChange={({target:{value}}) => this.handleChange({contacto_operativo:value})}
+                            />
+                        </Col>
+                        <Col>
+                            <InputEmail
+                                label='mail_contacto'
+                                value={mail_contacto}
+                                onChange={({target:{value}}) => this.handleChange({mail_contacto:value})}
+                            />
+                        </Col>
+                        <Col>
+                            <InputDate
+                                label='fecha_inicio_codificacion'
+                                value={fecha_inicio_codificacion}
+                                onChange={({target:{value}}) => this.handleChange({fecha_inicio_codificacion:value})}
+                            />
+                        </Col>
+                    </Row>
+                    <Row form>
+                        <Col>
+                            <InputDate
+                                label='fecha_fin_codificacion'
+                                value={fecha_fin_codificacion}
+                                onChange={({target:{value}}) => this.handleChange({fecha_fin_codificacion:value})}
+                            />
+                        </Col>
+                        <Col>
+                            <InputDate
+                                label='fecha_entrega_operativo'
+                                value={fecha_entrega_operativo}
+                                onChange={({target:{value}}) => this.handleChange({fecha_entrega_operativo:value})}
+                            />
+                        </Col>
+                        <Col>
+                            <InputSelect
+                                label='id_estado_operativo'
+                                values={estados}
+                                selectedOne={id_estado_operativo}
+                                onChange={({target:{value}}) => this.handleChange({id_estado_operativo:value})}
+                            />
+                        </Col>
+                    </Row>
+                    <Row form>
+                        <Col sm={4}>
+                            <InputNumber
+                                label='calidad_operativo'
+                                value={calidad_operativo}
+                                onChange={({target:{value}}) => this.handleChange({calidad_operativo:value})}
+                            />
+                        </Col>
+                        <Col sm={4}>
+                            <InputNumber
+                                label='nivel_error_operativo'
+                                value={nivel_error_operativo}
+                                onChange={({target:{value}}) => this.handleChange({nivel_error_operativo:value})}
+                            />
+                        </Col>
+                    </Row>
+                    <Row form>
+                        <Col sm={8}>
+                            <InputText
+                                label='observacion'
+                                value={observacion}
+                                onChange={({target:{value}}) => this.handleChange({observacion:value})}
+                            /> 
+                        </Col>
+                           
+                    </Row>      
+                    <Button
+                        onClick={()=>this.handleClick()}
+                    >
+                        Enviar
+                    </Button>
+                </Form>
             </Container>
         );
     }

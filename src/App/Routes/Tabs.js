@@ -1,21 +1,8 @@
 import React, { useState } from 'react';
-import {
-    TabContent,
-    TabPane,
-    Nav,
-    NavItem,
-    NavLink,
-    Card,
-    Button,
-    CardTitle,
-    CardText,
-    Row,
-    Col,
-    Container
-} from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 
-const TabsExample = () => {
+const Example = (props) => {
   const [activeTab, setActiveTab] = useState('1');
 
   const toggle = tab => {
@@ -23,8 +10,8 @@ const TabsExample = () => {
   }
 
   return (
-    <Container className='container' style={{background: 'blue'}}>
-      <Nav tabs style={{background: 'red'}}>
+    <div>
+      <Nav tabs>
         <NavItem>
           <NavLink
             className={classnames({ active: activeTab === '1' })}
@@ -42,11 +29,11 @@ const TabsExample = () => {
           </NavLink>
         </NavItem>
       </Nav>
-      <TabContent activeTab={activeTab} style={{background: 'red'}}>
+      <TabContent activeTab={activeTab}>
         <TabPane tabId="1">
           <Row>
             <Col sm="12">
-                <a class="nav-link" href="#fat">@fat</a>
+              <h4>Tab 1 Contents</h4>
             </Col>
           </Row>
         </TabPane>
@@ -69,8 +56,8 @@ const TabsExample = () => {
           </Row>
         </TabPane>
       </TabContent>
-    </Container>
+    </div>
   );
 }
 
-export default TabsExample;
+export default Example;

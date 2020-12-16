@@ -2,9 +2,12 @@ footer {
   width: 100%;
   min-height: 50px;
   padding: 7px;
-  background-color: $primary-color;
+  background-color: $primary-color-text;
   img {
     padding-bottom: 5px;
+    width: 100%;
+    height: 30px;
+
   }
   div.row > div {
     margin-top: 7px;
