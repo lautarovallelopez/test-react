@@ -83,20 +83,21 @@ class Header extends Component {
                 >
                     <header className="hidden-print">
                         <Navbar expand="lg" fixed={!isVisible ? 'top' : ''} >
+                     
                             <NavbarToggler onClick={() => this.toggleNavbar()}/>
-                            <Collapse isOpen={this.state.isCollapse} navbar style={{display:'inline'}}>
+                            <Collapse isOpen={this.state.isCollapse}  style={{display:'inline'}}>
                                 <NavItems
                                     redirect={route => this.redirect(route)}
                                 />
                             </Collapse>
-
+                        
                             <h1 style={{color: 'white'}} style={{color:'white', fontSize:'17px'}}>Sistema de Codificación Informatizada</h1>
-
+                    
                             <ul className="navbar-nav nav-flex-icons">
                                 <li className="nav-item">
                                     <FontAwesomeIcon icon={faPowerOff}/>
                                 </li>
-                            </ul>
+                            </ul>    
                         </Navbar>
                         
                     </header>

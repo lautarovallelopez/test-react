@@ -6,11 +6,19 @@ import {
     Error,
     Operativo,
     EstructuraOperativo,
-    Lote
+    Lote,
+    Codificacion,
+    Fuente,
+    Variable,
+    Nomenclatura,
+    Documento,
+    Chat,
+    Usuario
 } from '@components';
 import Tabs from './Tabs';
 import Footer from '../Footer';
 import Header from '../Header';
+
 export default () => (
     <HashRouter>
         <>
@@ -23,6 +31,13 @@ export default () => (
                     <Route path="/estructuraOperativo" component={EstructuraOperativo} />
                     <Route path="/lotes" component={Lote} />
                     <Route path="/operativo" component={Operativo}/>
+                    <Route path="/codificacion" component={Codificacion}/>
+                    <Route path="/fuentes" component={Fuente}/>
+                    <Route path="/variables" component={Variable}/>
+                    <Route path="/nomenclaturas" component={Nomenclatura}/>
+                    <Route path="/documentos" component={Documento}/>
+                    <Route path="/chat" component={Chat}/>
+                    <Route path="/usuarios" component={Usuario}/>
                     <Route component={Error}/>
                 </Switch>
             </main>

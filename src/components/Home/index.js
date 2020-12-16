@@ -17,13 +17,14 @@ const Home = () => {
                 <Col sm={{size:6, offset:3}} className="text-center">
                     <h3>BIENVENIDO AL SISTEMA SICI</h3>
                     <ListGroup>
-                        <ListGroupItem tag={'button', Link} to='/operativo' action >CODIFICACIÓN</ListGroupItem>
-                        <ListGroupItem tag="button" action>FUENTES OPERATIVOS</ListGroupItem>
-                        <ListGroupItem tag="button" action>VARABLES ESTADISTICAS</ListGroupItem>
-                        <ListGroupItem tag="button" action>NOMENCLATURAS</ListGroupItem>
-                        <ListGroupItem tag="button" action>DOCUMENTOS</ListGroupItem>
-                        <ListGroupItem tag="button" action>CHAT INTERNO</ListGroupItem>
-                        <ListGroupItem tag="button" action>MANEJO DE USUARIOS</ListGroupItem>
+                        <ListGroupItem tag={'button', Link} to='/operativo' action >OPERATIVO</ListGroupItem>
+                        <ListGroupItem tag={'button', Link} to='/codificacion' action >CODIFICACIÓN</ListGroupItem>
+                        <ListGroupItem tag={'button', Link} to='/fuentes' action>FUENTES OPERATIVOS</ListGroupItem>
+                        <ListGroupItem tag={'button', Link} to='/variables' action>VARIABLES ESTADISTICAS</ListGroupItem>
+                        <ListGroupItem tag={'button', Link} to='/nomenclaturas' action>NOMENCLATURAS</ListGroupItem>
+                        <ListGroupItem tag={'button', Link} to='/documentos' action>DOCUMENTOS</ListGroupItem>
+                        <ListGroupItem tag={'button', Link} to='/chat' action>CHAT INTERNO</ListGroupItem>
+                        <ListGroupItem tag={'button', Link} to='/usuarios' action>MANEJO DE USUARIOS</ListGroupItem>
                         {false && <ListGroupItem disabled tag="button" action>Vestibulum at eros</ListGroupItem>}
                     </ListGroup>
                 </Col>

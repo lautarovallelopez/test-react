@@ -1,8 +1,9 @@
 .navbar {
   width: auto;
-  padding: 1px;
+  padding: 1px 5px;
   background-color: $light-blue-color;
-  
+  display: flex;
+  justify-content: space-between;
   .navbar-nav .nav-link {
     padding: 5px 10px 6px;
     margin-top: 5px;
@@ -11,7 +12,6 @@
     color: #fff;
 
     &:hover {
-      margin-bottom: -3px;
       color: #000;
     }
   }
