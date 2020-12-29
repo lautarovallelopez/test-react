@@ -140,7 +140,7 @@ a {
 }
 
 input.form-control {
-  background-color: $white-color-2;
+  background-color: $white-color;
   &:active, &:focus {
     color: $primary-color;
     background-color: $white-color;
@@ -161,4 +161,22 @@ input.form-control {
   min-height: 100%;
   margin-right: auto;
   margin-left: auto;
+}
+.badge-title{
+  background-color: $light-blue-color;
+  color: $white-color-2;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 24px;
+  width: 100%;
+  display: block;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+.icon{
+  margin : 10px;
+  height: 80;
+}
+path{
+  height: 80px;
 }

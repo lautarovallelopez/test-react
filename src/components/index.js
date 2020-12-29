@@ -10,16 +10,25 @@ import Fuente from './Fuente';
 import Nomenclatura from './Nomenclatura';
 import Usuario from './Usuario';
 import Variable from './Variable';
-
-export {Error};
-export {EstructuraOperativo};
-export {Home};
-export {Operativo};
-export {Lote};
-export {Codificacion};
-export {Chat};
-export {Documento};
-export {Fuente};
-export {Nomenclatura};
-export {Usuario};
-export {Variable};
+import Corrector from './Corrector';
+import TipoObservacion from './TipoObservacion';
+import SubtipoNomenclador from './SubtipoNomenclador';
+import TipoDiccionario from './TipoDiccionario';
+export {
+    Error,
+    EstructuraOperativo,
+    Home,
+    Operativo,
+    Lote,
+    Codificacion,
+    Chat,
+    Documento,
+    Fuente,
+    Nomenclatura,
+    Usuario,
+    Variable,
+    Corrector,
+    TipoObservacion,
+    SubtipoNomenclador,
+    TipoDiccionario
+};

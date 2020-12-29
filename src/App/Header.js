@@ -82,7 +82,7 @@ class Header extends Component {
                     onShow={e => this.onShow(e)}
                 >
                     <header className="hidden-print">
-                        <Navbar expand="lg" fixed={!isVisible ? 'top' : ''} >
+                        <Navbar expand="lg">
                      
                             <NavbarToggler onClick={() => this.toggleNavbar()}/>
                             <Collapse isOpen={this.state.isCollapse}  style={{display:'inline'}}>

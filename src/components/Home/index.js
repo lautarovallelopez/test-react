@@ -25,6 +25,9 @@ const Home = () => {
                         <ListGroupItem tag={'button', Link} to='/documentos' action>DOCUMENTOS</ListGroupItem>
                         <ListGroupItem tag={'button', Link} to='/chat' action>CHAT INTERNO</ListGroupItem>
                         <ListGroupItem tag={'button', Link} to='/usuarios' action>MANEJO DE USUARIOS</ListGroupItem>
+                        <ListGroupItem tag={'button', Link} to='/tipo_observacion' action>TIPOS DE OBSERVACIÓN</ListGroupItem>
+                        <ListGroupItem tag={'button', Link} to='/subtipo-nomenclador' action>SUBTIPO NOMENCLADOR</ListGroupItem>
+                        <ListGroupItem tag={'button', Link} to='/tipo-diccionario' action>TIPO DE DICCIONARIO LINGUISTICO</ListGroupItem>
                         {false && <ListGroupItem disabled tag="button" action>Vestibulum at eros</ListGroupItem>}
                     </ListGroup>
                 </Col>

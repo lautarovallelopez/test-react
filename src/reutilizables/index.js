@@ -7,13 +7,21 @@ import InputText from './Form/InputText';
 import RegularInput from './Form/RegularInput';
 import InputRadio from './Form/InputRadio';
 import InputFile from './Form/InputFile';
+import Title from './Title';
+import CheckBox from './Form/Checkbox';
+import PrimaryButton from './Button';
 
-export {InputFile};
-export {Table};
-export {InputEmail};
-export {InputDate};
-export {InputNumber};
-export {InputSelect};
-export {InputText};
-export {RegularInput};
-export {InputRadio};
+export {
+    InputFile,
+    Table,
+    InputEmail,
+    InputDate,
+    InputNumber,
+    InputSelect,
+    InputText,
+    RegularInput,
+    InputRadio,
+    Title,
+    CheckBox,
+    PrimaryButton
+};
