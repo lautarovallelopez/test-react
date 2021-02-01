@@ -28,6 +28,8 @@ const Home = () => {
                         <ListGroupItem tag={'button', Link} to='/tipo_observacion' action>TIPOS DE OBSERVACIÓN</ListGroupItem>
                         <ListGroupItem tag={'button', Link} to='/subtipo-nomenclador' action>SUBTIPO NOMENCLADOR</ListGroupItem>
                         <ListGroupItem tag={'button', Link} to='/tipo-diccionario' action>TIPO DE DICCIONARIO LINGUISTICO</ListGroupItem>
+                        <ListGroupItem tag={'button', Link} to='/diccionario-linguistico' action>DICCIONARIO LINGUISTICO</ListGroupItem>
+                        <ListGroupItem tag={'button', Link} to='/auto-frase' action>AUTOFRASES</ListGroupItem>
                         {false && <ListGroupItem disabled tag="button" action>Vestibulum at eros</ListGroupItem>}
                     </ListGroup>
                 </Col>

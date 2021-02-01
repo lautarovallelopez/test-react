@@ -6,6 +6,7 @@ import options from './Options';
 import estructuraOperativo from './EstructuraOperativo';
 import file from './File';
 import lote from './Lote';
+import rolSici from './RolSici';
 export default combineReducers({
     farmData,
     staticData,
@@ -13,5 +14,6 @@ export default combineReducers({
     options,
     file,
     estructuraOperativo,
-    lote
+    lote,
+    rolSici
 });

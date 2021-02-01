@@ -10,7 +10,9 @@ import InputFile from './Form/InputFile';
 import Title from './Title';
 import CheckBox from './Form/Checkbox';
 import PrimaryButton from './Button';
-
+import IconFileDownload from './Iconos/IconFileDownload';
+import IconComment from './Iconos/IconComment';
+import IconDocument from './Iconos/IconDocument';
 export {
     InputFile,
     Table,
@@ -23,5 +25,8 @@ export {
     InputRadio,
     Title,
     CheckBox,
-    PrimaryButton
+    PrimaryButton,
+    IconFileDownload,
+    IconComment,
+    IconDocument
 };

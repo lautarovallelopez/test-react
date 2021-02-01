@@ -4,7 +4,8 @@ import {
     RegularInput,
     InputText,
     CheckBox,
-    PrimaryButton
+    PrimaryButton,
+    InputSelect
 } from '@reutilizables'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
@@ -16,50 +17,43 @@ const Example = (props) => {
   return (
       <Form>
         <Row form>
-            <Col md='4'>
-                <RegularInput 
-                    label='id tipo de diccionario linguistico'
+            <Col md='8'>
+                <InputSelect
+                    label='Descripción del tipo de diccionario'
                 />
             </Col>
-            <Col md={{ size: 4, offset: 4 }}>
+            <Col md={{ size: 4}}>
                 <FontAwesomeIcon icon={faFileDownload} className='fa-3x icon'/>
                 <FontAwesomeIcon icon={faComment} className='fa-3x icon'/>
                 <FontAwesomeIcon icon={faBook} className='fa-3x icon'/>
             </Col>
         </Row>
         <Row form>
-            <Col md='12'>
-                <InputText
-                    label='Descripción'
-                />
-            </Col>
-        </Row>
-        <Row form>
-            <Col md='3'>
-                <CheckBox
-                    label='SI x PALABRA   NO x FRASE'
-                />
-            </Col>
-            <Col md='3'>
-                <CheckBox 
-                    label='SI x DESCRIPCION DESTINO'
-                />
-            </Col>
-            <Col md='3'>
-                <CheckBox
-                    label='SI x PALABRA   NO x FRASE DESTINO'
-                />
-            </Col>
-            <Col md='3'>
-                <CheckBox
-                    label='SI x EXPRESION REGULAR'
-                />
-            </Col>
-        </Row>
-        <Row form>
-            <Col md='8'>
+            <Col md='2'>
                 <RegularInput
-                    label='Expresión regular de validación'
+                    label='Id Variable'
+                />
+            </Col>
+            <Col md='3'>
+                <RegularInput
+                    label='Abreviatura'
+                />
+            </Col>
+            <Col md='7'>
+                <InputSelect
+                    label='Variable Estadística'
+                />
+            </Col>
+        </Row>
+        <Row form>
+            <Col md='6'>
+                <RegularInput
+                    label='Palabra/Frase Origen'
+                />
+            </Col>
+            <Col md='6'>
+                <RegularInput
+                    label='Palabra/Frase Destino'
                 />
             </Col>
         </Row>

@@ -14,6 +14,9 @@ import Corrector from './Corrector';
 import TipoObservacion from './TipoObservacion';
 import SubtipoNomenclador from './SubtipoNomenclador';
 import TipoDiccionario from './TipoDiccionario';
+import DiccionarioLinguistico from './DiccionarioLinguistico';
+import AutoFrase from './AutoFrase';
+import RolSici from './RolSici';
 export {
     Error,
     EstructuraOperativo,
@@ -30,5 +33,8 @@ export {
     Corrector,
     TipoObservacion,
     SubtipoNomenclador,
-    TipoDiccionario
+    TipoDiccionario,
+    DiccionarioLinguistico,
+    AutoFrase,
+    RolSici
 };

@@ -2,6 +2,7 @@
 import {forEach, transform} from 'lodash';
 export default class Http {
     static async get(url) {
+        console.log(`${ENDPOINT}${url}`)
         const response = await fetch(`${ENDPOINT}${url}`, {
             credentials: 'same-origin',
             headers: {

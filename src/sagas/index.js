@@ -6,6 +6,7 @@ import options from './Options';
 import estructuraOperativo from './EstructuraOperativo';
 import file from './File';
 import lote from './Lote';
+import rolSici from './RolSici';
 export default function* root() {
     yield all(
         concat(
@@ -13,7 +14,8 @@ export default function* root() {
             options,
             estructuraOperativo,
             file,
-            lote
+            lote,
+            rolSici
         )
     );
 }

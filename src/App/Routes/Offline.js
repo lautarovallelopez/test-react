@@ -17,7 +17,10 @@ import {
     Corrector,
     TipoObservacion,
     SubtipoNomenclador,
-    TipoDiccionario
+    TipoDiccionario,
+    DiccionarioLinguistico,
+    AutoFrase,
+    RolSici
 } from '@components';
 import Tabs from './Tabs';
 import Footer from '../Footer';
@@ -47,6 +50,9 @@ export default () => (
                         <Route path="/tipo_observacion" component={TipoObservacion}/>
                         <Route path="/subtipo-nomenclador" component={SubtipoNomenclador} />
                         <Route path="/tipo-diccionario" component={TipoDiccionario} />
+                        <Route path="/diccionario-linguistico" component={DiccionarioLinguistico} />
+                        <Route path="/auto-frase" component={AutoFrase} />
+                        <Route path="/rol-sici" component={RolSici} />
                         <Route component={Error}/>
                     </Switch>
                 </Container>
