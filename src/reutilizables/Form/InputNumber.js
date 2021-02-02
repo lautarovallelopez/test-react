@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormGroup, Label, Input, Col } from 'reactstrap';
-const InputNumber = ({label, value, onChange}) => (
+const InputNumber = ({id,label, value, onChange}) => (
     <FormGroup row>
         <Label for={label}>{label}:</Label>
         <Input
@@ -8,7 +8,7 @@ const InputNumber = ({label, value, onChange}) => (
           bsSize="sm"
           type="number"
           name={label}
-          id={label}
+          id={id}
           placeholder={`Ingrese ${label}`}
           value={value}
           onChange={onChange}

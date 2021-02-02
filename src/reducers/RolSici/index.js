@@ -19,12 +19,12 @@ export default (state=initialState, action) => {
                 ...state,
                 roles : action.response.roles
             }
-        /*case UPDATE_CAMPO:
+        case UPDATE_ROL_SICI:
             return {
                 ...state,
-                campo : action.updates
+                rolActual : action.updates
             }
-        case FETCH_ONE_CAMPO_REQUESTED:
+        /*case FETCH_ONE_CAMPO_REQUESTED:
             return {
                 ...state,
                 campo : initialState.campo

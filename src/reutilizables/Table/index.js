@@ -1,17 +1,20 @@
 import React from 'react';
 import map from 'lodash/map'
-import { Button, Table, ButtonGroup } from 'reactstrap';
+import { Button, Table, ButtonGroup, UncontrolledTooltip } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import Modal from './Modal';
-const Index = ({headers, rows, information, links}) => (
-    <Table size="sm" className='table-responsive'>
+import {faPen, faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+const Index = ({headers, rows, information, links, acciones}) => (
+    <Table size="lg" className='table-responsive'>
       <thead>
         <tr>
           {headers && map(headers, header => (
             <th>{header}</th>
           ))}
           {information && <th>Información</th>}
-          {links && <th>Acciones</th>}
+          {links && <th>Links</th>}
+          {acciones && <th>Acciones</th>}
         </tr>
       </thead>
       <tbody>
@@ -34,14 +37,25 @@ const Index = ({headers, rows, information, links}) => (
               <td>
                 <ButtonGroup>
                   {map(links, link=>(
-                    <Button tag={Link} to={`${link.url}/${row[link.id]}`} >
-                      {link.label}
-                    </Button>
+                      <Button tag={Link} to={`${link.url}/${row[link.id]}`} >
+                        <FontAwesomeIcon icon={faPen}/>
+                      </Button>
                   ))}
                 </ButtonGroup>
-                
-                
-              </td>}
+              </td>
+            }
+            {acciones &&
+              <td>
+                <ButtonGroup>
+                    <Button tag={Link} color="info" title="editar">
+                      <FontAwesomeIcon icon={faPen}/>
+                    </Button>
+                    <Button tag={Link} color="danger" title="eliminar">
+                      <FontAwesomeIcon icon={faTrashAlt}/>
+                    </Button>
+                </ButtonGroup>
+              </td>
+            }
           </tr>
         ))}
         

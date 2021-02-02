@@ -1,85 +1,97 @@
-import { reduce } from 'lodash';
 import React, {Component} from 'react';
 import {Title} from '@reutilizables';
 import { Form, Row, Col, Button, Container} from 'reactstrap';
-import { InputEmail, InputDate, InputNumber, InputSelect, RegularInput, InputText} from '../../../reutilizables';
-
+import { Select, InputNumber, InputText} from '../../../reutilizables';
+import PropTypes from 'prop-types';
 class Edit extends Component{
-    /*componentDidMount(){
+    componentDidMount(){
         const {id} = this.props.match.params;
-        this.props.fetchOptions();
-        if(id){
-            this.props.fetchOne(id);
-        }
+        
     }
-    handleChange(change){
-        const {operativoActual} = this.props;
-        Object.assign(operativoActual, change)
-        this.props.update(operativoActual);
-        this.forceUpdate();
-    }
+    /*
     handleClick(){
         this.props.submit();
     }*/
+    handleChange(e){
+        const changes = {[e.target.id]: e.target.value}
+        const {rolActual} = this.props;
+        Object.assign(rolActual, changes)
+        this.props.update(rolActual);
+        console.log(rolActual)
+        this.forceUpdate();
+    }
     render(){
-        /*const {
-            descripcion,
-            observacion,
-            dominio,
-            fecha_llegada_paquete,
-            formato_del_archivo,
-            total_registros,
-            contacto_operativo,
-            mail_contacto,
-            fecha_inicio_codificacion,
-            fecha_fin_codificacion,
-            fecha_entrega_operativo,
-            id_estado_operativo,
-            calidad_operativo,
-            nivel_error_operativo
-        } = this.props.operativoActual;
-        const {estados, formatos} = this.props;
-        console.log(estados);*/
+        const {
+            ID_USUARIO,
+            NOMBRE,
+            ID_ROL_USUARIO,
+            DESCRIPCION,
+            DOMINIO,
+            OBSERVACION,
+        } = this.props.rolActual;
         return (
             <Container>
                 <Title title='EDICIÓN ROLES SICI'/>
                 <Form>
                     <Row form>
                         <Col md='4'>
-                            <RegularInput 
+                            <InputNumber
+                                id='ID_USUARIO'
                                 label='ID'
+                                value={ID_USUARIO}
+                                onChange={(e)=>this.handleChange(e)}
                             />
                         </Col>
                         <Col md='4'>
-                            <RegularInput
+                            <Select
+                                id='ID_USUARIO'
                                 label='Usuario'
-                                
+                                options={[{nombre:'lautaro', id:'1'}, {nombre:'gustavo', id:'2'}]}
+                                onChange={(e)=>this.handleChange(e)}
+                                selectedOne={ID_USUARIO}
+                                optionValue='id'
+                                optionLabel='nombre'
                             />
                         </Col>
                     </Row>
                     <Row form >
                         <Col>
-                            <InputSelect
+                            <Select
+                                id='ID_ROL_USUARIO'
                                 label='Rol Usuario'
+                                options={[{nombre:'lautaro', id:'lvalle'}, {nombre:'gustavo', id:'galbornoz'}]}
+                                onChange={(e)=>this.handleChange(e)}
+                                selectedOne=''
+                                optionValue='id'
+                                optionLabel='nombre'
                             />
                         </Col>
                     </Row>
                     <Row form>
                         <Col sm={6}>
                             <InputText
+                                id='OBSERVACION'
                                 label='Observación'
-                            /> 
+                                value={OBSERVACION}
+                                onChange={(e)=>this.handleChange(e)}
+                            />
                         </Col>
                         <Col sm={6}>
                             <InputText
+                                id='DESCRIPCION'
                                 label='Descripción'
+                                value={DESCRIPCION}
+                                onChange={(e)=>this.handleChange(e)}
                             /> 
                         </Col>
                     </Row>   
                     <Row form>
                         <Col sm={12}>
                             <InputText
-                                label='Dominio'
+                                id='DOMINIO'
+                                label='dominio'
+                                value={DOMINIO}
+                                onChange={(e)=>this.handleChange(e)}
                             /> 
                         </Col>
                     </Row>     

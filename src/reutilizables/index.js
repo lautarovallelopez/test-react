@@ -13,6 +13,8 @@ import PrimaryButton from './Button';
 import IconFileDownload from './Iconos/IconFileDownload';
 import IconComment from './Iconos/IconComment';
 import IconDocument from './Iconos/IconDocument';
+import Loading from './Loading';
+import Select from './Form/Select';
 export {
     InputFile,
     Table,
@@ -28,5 +30,7 @@ export {
     PrimaryButton,
     IconFileDownload,
     IconComment,
-    IconDocument
+    IconDocument,
+    Loading,
+    Select
 };
