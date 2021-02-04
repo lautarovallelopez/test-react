@@ -1,7 +1,9 @@
 import {call, put, select} from 'redux-saga/effects';
-
+import {head} from 'lodash';
 import {
-    fetchRolesSiciSucceeded
+    fetchRolesSiciSucceeded,
+    fetchRolesSiciRequested,
+    fetchOneRolSiciSucceeded
     /*submitRolSiciSucceeded,
     fetchOneRolSiciSucceeded*/
 } from '@actions/rolSici';
@@ -16,13 +18,19 @@ export function* fetchRolesSici() {
     yield put(fetchRolesSiciSucceeded(result));
 }
 
+export function* deleteRolSici({ids}){
+    const result = yield call(RolSiciService.delete, ids);
+    yield put(fetchRolesSiciRequested());
+}
+
+export function* fetchOneRolSici({ids}){
+    const {roles} = yield call(RolSiciService.fetchOne, ids);
+    yield put(fetchOneRolSiciSucceeded(head(roles)));
+}
 /*export function* submitRoleSici(){
     const {operativoActual} = yield select(state=>state.operativo);
     const response = yield call(RolSiciService.submit, operativoActual);
     yield put(submitRolSiciSucceeded(response));
 }
 
-export function* fetchOneRolSici({id}){
-    const operativo = yield call(RolSiciService.fetchOne, id);
-    yield put(fetchOneRolSiciSucceeded(operativo));
-}*/
+*/

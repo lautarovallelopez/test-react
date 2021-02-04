@@ -38,11 +38,10 @@ export default class Http {
         return response.json();
     }
 
-    static async delete(url, body) {
+    static async delete(url) {
         const response = await fetch(`${ENDPOINT}${url}`, {
             method: 'delete',
             credentials: 'same-origin',
-            body: JSON.stringify(body),
             headers: {
                 'content-type': 'application/json',
                 referrer: ENDPOINT

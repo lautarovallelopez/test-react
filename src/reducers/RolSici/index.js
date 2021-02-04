@@ -11,8 +11,7 @@ export default (state=initialState, action) => {
     switch (action.type) {
         case FETCH_ROLES_SICI_REQUESTED:
             return {
-                ...state,
-                roles : []
+                ...state
             }
         case FETCH_ROLES_SICI_SUCCEEDED:
             return {
@@ -24,16 +23,16 @@ export default (state=initialState, action) => {
                 ...state,
                 rolActual : action.updates
             }
-        /*case FETCH_ONE_CAMPO_REQUESTED:
+        case FETCH_ONE_ROL_SICI_REQUESTED:
             return {
                 ...state,
-                campo : initialState.campo
+                rolActual : initialState.rolActual
             };
-        case FETCH_ONE_CAMPO_SUCCEEDED:
+        case FETCH_ONE_ROL_SICI_SUCCEEDED:
             return {
                 ...state,
-                campo : action.response
-            }*/
+                rolActual : action.rol
+            }
         default:
             return {...state};
     }

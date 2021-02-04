@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 import {Title} from '@reutilizables';
 import { Form, Row, Col, Button, Container} from 'reactstrap';
-import { Select, InputNumber, InputText} from '../../../reutilizables';
+import { Select, InputNumber, InputText, PrimaryButton} from '../../../reutilizables';
 import PropTypes from 'prop-types';
 class Edit extends Component{
     componentDidMount(){
-        const {id} = this.props.match.params;
-        
+        this.props.fetchUsuarios();
+        this.props.fetchTipoDeRoles();
+        const {ID_USUARIO, ID_ROL_USUARIO} = this.props.match.params;
+        if(ID_ROL_USUARIO && ID_USUARIO){
+            this.props.getOne({ID_USUARIO, ID_ROL_USUARIO})
+        }
     }
     /*
     handleClick(){
@@ -46,11 +50,11 @@ class Edit extends Component{
                             <Select
                                 id='ID_USUARIO'
                                 label='Usuario'
-                                options={[{nombre:'lautaro', id:'1'}, {nombre:'gustavo', id:'2'}]}
+                                options={this.props.usuarios}
                                 onChange={(e)=>this.handleChange(e)}
                                 selectedOne={ID_USUARIO}
-                                optionValue='id'
-                                optionLabel='nombre'
+                                optionValue='ID_USUARIO'
+                                optionLabel='USUARIO'
                             />
                         </Col>
                     </Row>
@@ -59,11 +63,11 @@ class Edit extends Component{
                             <Select
                                 id='ID_ROL_USUARIO'
                                 label='Rol Usuario'
-                                options={[{nombre:'lautaro', id:'lvalle'}, {nombre:'gustavo', id:'galbornoz'}]}
+                                options={this.props.tipoDeRoles}
                                 onChange={(e)=>this.handleChange(e)}
-                                selectedOne=''
-                                optionValue='id'
-                                optionLabel='nombre'
+                                selectedOne={ID_ROL_USUARIO}
+                                optionValue='ID_ROL_USUARIO'
+                                optionLabel='ID_ROL_USUARIO'
                             />
                         </Col>
                     </Row>
@@ -94,10 +98,26 @@ class Edit extends Component{
                                 onChange={(e)=>this.handleChange(e)}
                             /> 
                         </Col>
-                    </Row>     
-                    <Button>
-                        Enviar
-                    </Button>
+                    </Row>   
+                    <Row form>
+                        <Col sm={4}>
+                            <Button>
+                                Usuario Nomenclador
+                            </Button>
+                            
+                        </Col>
+                        <Col sm={4}>
+                            <Button>
+                                Rol Operativo Variable
+                            </Button>
+                        </Col>
+                        <Col sm={4}>
+                            <PrimaryButton
+                                label='GUARDAR'
+                            />
+                        </Col>
+                    </Row>    
+                    
                 </Form>
             </Container>
         );

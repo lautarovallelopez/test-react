@@ -7,6 +7,8 @@ import estructuraOperativo from './EstructuraOperativo';
 import file from './File';
 import lote from './Lote';
 import rolSici from './RolSici';
+import usuario from './Usuario';
+import TipoDeRol from './TipoDeRol';
 export default function* root() {
     yield all(
         concat(
@@ -15,7 +17,9 @@ export default function* root() {
             estructuraOperativo,
             file,
             lote,
-            rolSici
+            rolSici,
+            usuario,
+            TipoDeRol
         )
     );
 }

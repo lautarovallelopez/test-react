@@ -1,10 +1,19 @@
 import React from 'react';
-import map from 'lodash/map'
-import { Button, Table, ButtonGroup, UncontrolledTooltip } from 'reactstrap';
+import {map, pick, forEach} from 'lodash'
+import { Button, Table, ButtonGroup } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import Modal from './Modal';
 import {faPen, faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import queryString from 'query-string';
+const toQuery = attributes=>queryString.stringify(attributes);
+const toParams = (attribute, obj)=>{
+  let params='';
+  forEach(attribute, function(value) {
+    params += `/${obj[value]}`
+  });
+  return params;
+}
 const Index = ({headers, rows, information, links, acciones}) => (
     <Table size="lg" className='table-responsive'>
       <thead>
@@ -47,10 +56,19 @@ const Index = ({headers, rows, information, links, acciones}) => (
             {acciones &&
               <td>
                 <ButtonGroup>
-                    <Button tag={Link} color="info" title="editar">
+                    <Button
+                      tag={Link}
+                      color="info"
+                      to = {`${acciones.editar.to}${toParams(acciones.editar.attributes, row)}`}
+                      title="editar"
+                    >
                       <FontAwesomeIcon icon={faPen}/>
                     </Button>
-                    <Button tag={Link} color="danger" title="eliminar">
+                    <Button
+                      color="danger" 
+                      title="eliminar" 
+                      onClick={() =>acciones.eliminar.onClick(pick(row, acciones.eliminar.attributes))}
+                    >
                       <FontAwesomeIcon icon={faTrashAlt}/>
                     </Button>
                 </ButtonGroup>

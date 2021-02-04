@@ -1,7 +1,10 @@
 import {connect} from 'react-redux';
 import get from 'lodash/get';
 
-import {fetchRolesSiciRequested} from '@actions/rolSici';
+import {
+    fetchRolesSiciRequested,
+    deleteRolSiciRequested
+} from '@actions/rolSici';
 
 import Component from './Component';
 
@@ -13,7 +16,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchRoles: () => dispatch(fetchRolesSiciRequested())
+    fetchRoles: () => dispatch(fetchRolesSiciRequested()),
+    deleteRol: ids => dispatch(deleteRolSiciRequested(ids))
 });
 
 export default connect(

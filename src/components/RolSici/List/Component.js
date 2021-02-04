@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
-import {Container, Row, Col} from 'reactstrap';
+import {Container, Row, Col, Button} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import {Title, Table, Loading, PrimaryButton} from '@reutilizables';
 import {isEmpty} from 'lodash';
+import {faPlus} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import Edit from '../Edit/Component';
 class List extends Component{
     componentDidMount(){
         this.props.fetchRoles();
@@ -19,9 +22,10 @@ class List extends Component{
                 </Row>
                 <Row>
                     <Col>
-                        <PrimaryButton
-                            label='Nuevo Rol Sicidd'
-                            to='/rol-sici/new'
+                        <PrimaryButton 
+                            icono = {faPlus}
+                            to='rol-sici/new'
+                            label='Agregar Rol Sici'
                         />
                     </Col>
                 </Row>
@@ -34,7 +38,16 @@ class List extends Component{
                                 rows = {roles}
                                 headers = {tableHeaders}
                                 information = {formHeaders}
-                                acciones = 'afd'
+                                acciones = {{
+                                    editar:{
+                                        to:'rol-sici',
+                                        attributes : ['ID_USUARIO', 'ID_ROL_USUARIO']
+                                    },
+                                    eliminar : {
+                                        onClick : (ids)=>this.props.deleteRol(ids),
+                                        attributes : ['ID_USUARIO', 'ID_ROL_USUARIO']
+                                    }
+                                }}
                             />
                         }
                     </Col>
@@ -43,5 +56,4 @@ class List extends Component{
         )
     }
 }
-
 export default List;

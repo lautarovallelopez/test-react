@@ -8,7 +8,7 @@ import Edit from './Edit';
 const Operativo = ({match : {path}})=>(
     <Switch>
         <Route path={`${path}/new`} exact component={Edit} />
-        <Route path={`${path}/:id`} exact component={Edit} />
+        <Route path={`${path}/:ID_USUARIO/:ID_ROL_USUARIO`} exact component={Edit} />
         <Route path={path} component={List} />
     </Switch>
 );
