@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {map, pick, forEach} from 'lodash'
 import { Button, Table, ButtonGroup } from 'reactstrap';
 import {Link} from 'react-router-dom';
@@ -14,36 +14,43 @@ const toParams = (attribute, obj)=>{
   });
   return params;
 }
-const Index = ({headers, rows, information, links, acciones}) => (
-    <Table size="lg" className='table-responsive'>
+let counter = 0;
+const getCounter = ()=>{
+  counter++;
+  return counter;
+}
+const Index = ({headers, rows, information, links, acciones, index}) => (
+    <div className='table-responsive'>
+    <Table className='table-responsive' size="lg">
       <thead>
-        <tr>
+        <tr key='headers'>
           {headers && map(headers, header => (
-            <th>{header}</th>
+            <th key={header}>{header}</th>
           ))}
-          {information && <th>Información</th>}
-          {links && <th>Links</th>}
-          {acciones && <th>Acciones</th>}
+          {information && <th key='Informacion'>Información</th>}
+          {links && <th key='Links'>Links</th>}
+          {acciones && <th key='Acciones'>Acciones</th>}
         </tr>
       </thead>
       <tbody>
         
         {rows && map(rows, row => (
-          <tr>
+          <tr key={`${getCounter()}-${row[index]}`}>
             {headers && map(headers, header => 
-              <td>{row[header]}</td>
+              <td key={`${header}-${row[index]}`}>{row[header]}</td>
             )}
             {information && (
-              <td>
+              <td key={`${getCounter()}-Informacion-${row[index]}`}>
                 <Modal
                   information = {information}
                   row = {row}
                   buttonLabel = "Ver"
+                  index={getCounter()}
                 />
               </td>
             )}
             {links &&
-              <td>
+              <td key={`${getCounter()}-Links-${row[index]}`}>
                 <ButtonGroup>
                   {map(links, link=>(
                       <Button tag={Link} to={`${link.url}/${row[link.id]}`} >
@@ -54,7 +61,7 @@ const Index = ({headers, rows, information, links, acciones}) => (
               </td>
             }
             {acciones &&
-              <td>
+              <td key={`${getCounter()}-Acciones-${row[index]}`}>
                 <ButtonGroup>
                     <Button
                       tag={Link}
@@ -79,6 +86,9 @@ const Index = ({headers, rows, information, links, acciones}) => (
         
       </tbody>
     </Table>
+
+    </div>
+    
 );
 
 export default Index;

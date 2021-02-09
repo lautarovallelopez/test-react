@@ -14,7 +14,7 @@ export const FETCH_ONE_ROL_SICI_SUCCEEDED = 'FETCH_ONE_ROL_SICI_SUCCEEDED';
 export const fetchOneRolSiciSucceeded = rol => ({type : FETCH_ONE_ROL_SICI_SUCCEEDED, rol});
 
 export const SUBMIT_ROL_SICI_REQUESTED = 'SUBMIT_ROL_SICI_REQUESTED';
-export const submitRolSiciRequested = rol =>({type : SUBMIT_ROL_SICI_REQUESTED, rol});
+export const submitRolSiciRequested = () =>({type : SUBMIT_ROL_SICI_REQUESTED});
 
 export const SUBMIT_ROL_SICI_SUCCEEDED = 'SUBMIT_ROL_SICI_SUCCEEDED';
 export const submitRolSiciSucceeded = response => ({type : SUBMIT_ROL_SICI_SUCCEEDED, response});

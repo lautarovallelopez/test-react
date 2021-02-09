@@ -38,6 +38,7 @@ class List extends Component{
                                 rows = {roles}
                                 headers = {tableHeaders}
                                 information = {formHeaders}
+                                index='ID_USUARIO'
                                 acciones = {{
                                     editar:{
                                         to:'rol-sici',

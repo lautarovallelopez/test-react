@@ -10,16 +10,17 @@ class RolSici {
     static fetchOne(ids) {
         return Http.get(`api/rolSici?${queryString.stringify(ids)}`);
     }
-    /*static fetchOne(id){
-        return Http.get(`api/operativo/${id}`)
-    }
-    static submit(operativo){
-        if(operativo.id_operativo){
-            return Http.put(`api/operativo/${operativo.id_operativo}`, operativo);
+    static submit(rolSici){
+        if(rolSici.FECHA_ALTA){
+            delete rolSici.FECHA_ALTA;
+            return Http.put(`api/rolSici?${queryString.stringify({
+                ID_USUARIO:rolSici.ID_USUARIO,
+                ID_ROL_USUARIO: rolSici.ID_ROL_USUARIO
+            })}`, rolSici);
         }else{
-            return Http.post(`api/operativo`, operativo);
+            return Http.post(`api/rolSici`, rolSici);
         }
-    }*/
+    }
 }
 
 export default RolSici;

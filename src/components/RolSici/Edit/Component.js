@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Title} from '@reutilizables';
 import { Form, Row, Col, Button, Container} from 'reactstrap';
 import { Select, InputNumber, InputText, PrimaryButton} from '../../../reutilizables';
-import PropTypes from 'prop-types';
+import {toNumber} from 'lodash';
 class Edit extends Component{
     componentDidMount(){
         this.props.fetchUsuarios();
@@ -21,7 +21,6 @@ class Edit extends Component{
         const {rolActual} = this.props;
         Object.assign(rolActual, changes)
         this.props.update(rolActual);
-        console.log(rolActual)
         this.forceUpdate();
     }
     render(){
@@ -114,6 +113,7 @@ class Edit extends Component{
                         <Col sm={4}>
                             <PrimaryButton
                                 label='GUARDAR'
+                                onClick={()=>this.props.submitRol()}
                             />
                         </Col>
                     </Row>    

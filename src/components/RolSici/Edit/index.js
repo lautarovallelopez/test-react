@@ -2,7 +2,8 @@ import {connect} from 'react-redux';
 import get from 'lodash/get';
 import {
     updateRolSici,
-    fetchOneRolSiciRequested
+    fetchOneRolSiciRequested,
+    submitRolSiciRequested
 } from '@actions/rolSici';
 import {
     fetchUsuariosRequested
@@ -23,7 +24,8 @@ const mapDispatchToProps = dispatch => ({
     update: change => dispatch(updateRolSici(change)),
     getOne: ids => dispatch(fetchOneRolSiciRequested(ids)),
     fetchUsuarios: () => dispatch(fetchUsuariosRequested()),
-    fetchTipoDeRoles: ()=>dispatch(fetchTipoDeRolRequested())
+    fetchTipoDeRoles: ()=>dispatch(fetchTipoDeRolRequested()),
+    submitRol: ()=>dispatch(submitRolSiciRequested())
 });
 
 export default connect(

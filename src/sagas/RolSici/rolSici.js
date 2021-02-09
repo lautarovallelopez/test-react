@@ -3,9 +3,8 @@ import {head} from 'lodash';
 import {
     fetchRolesSiciSucceeded,
     fetchRolesSiciRequested,
-    fetchOneRolSiciSucceeded
-    /*submitRolSiciSucceeded,
-    fetchOneRolSiciSucceeded*/
+    fetchOneRolSiciSucceeded,
+    submitRolSiciSucceeded
 } from '@actions/rolSici';
 
 import RolSiciService from '@services/rolSici';
@@ -14,7 +13,6 @@ import RolSiciService from '@services/rolSici';
 
 export function* fetchRolesSici() {
     const result = yield call(RolSiciService.fetch);
-    console.log(result);
     yield put(fetchRolesSiciSucceeded(result));
 }
 
@@ -27,10 +25,8 @@ export function* fetchOneRolSici({ids}){
     const {roles} = yield call(RolSiciService.fetchOne, ids);
     yield put(fetchOneRolSiciSucceeded(head(roles)));
 }
-/*export function* submitRoleSici(){
-    const {operativoActual} = yield select(state=>state.operativo);
-    const response = yield call(RolSiciService.submit, operativoActual);
+export function* submitRoleSici(){
+    const {rolActual} = yield select(state=>state.rolSici);
+    const response = yield call(RolSiciService.submit, rolActual);
     yield put(submitRolSiciSucceeded(response));
 }
-
-*/

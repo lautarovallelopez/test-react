@@ -12,13 +12,14 @@ const InputSelect = ({id, label, options, onChange, selectedOne, optionValue, op
           name={label}
           id={id}
           onChange={onChange}
+          value={selectedOne || ''}
         >
-          <option selected value="">
+          <option value="">
             {`Elija ${label}`}
           </option>
           {options && map(options, singleOption =>(
               <option
-                selected={selectedOne===singleOption[optionValue]}
+                key={singleOption[optionValue]}
                 value={singleOption[optionValue]}
               >
                 {singleOption[optionLabel]}

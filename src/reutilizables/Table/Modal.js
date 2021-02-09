@@ -15,14 +15,15 @@ const ModalExample = (props) => {
   const toggle = () => setModal(!modal);
 
   return (
-    <div>
+    <div key={props.index}>
       <Button color="primary" onClick={toggle}>{buttonLabel}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
             {information && map(information, info => (
-                <div>{info}: <b>{row[info] || '-----'}</b></div>
+                <div key={`${props.index}-${info}`}>{info}: <b>{row[info] || '-----'}</b></div>
             ))}
+            <div>{props.index}</div>
           
         </ModalBody>
         <ModalFooter>

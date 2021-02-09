@@ -16,10 +16,10 @@ const Footer = () => (
                 </div>
             </Col>
             <Col sm={3} md={3} className={`m-0 p-0 mt-2`}>
-                <quote className={`small`}>
+                <q className={`small`}>
                     Usuario
                     &nbsp;- 2020
-                </quote>
+                </q>
             </Col>
             <Col sm={3} md={3} className={`m-0 p-0 mt-2`}>
                 <div className={`version small`}>
